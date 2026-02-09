@@ -1,54 +1,85 @@
+
 import React from "react";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import ContactForm from "./components/ContactForm";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+
+// Import pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Team from "./pages/Team";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="font-sans">
-      {/* Header */}
-      <header className="bg-blue-900 text-white p-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">BCHOD Zambia</h1>
-        <nav className="space-x-6">
-          <a href="#services" className="hover:underline">Services</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#contact" className="hover:underline">Contact</a>
-        </nav>
-      </header>
+    <Router>
+      <div className="font-sans min-h-screen flex flex-col">
+        {/* Header / Navigation */}
+        <header className="bg-primary text-white p-6 shadow sticky top-0 z-50">
+          <div className="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 className="text-2xl font-bold">BCHOD Zambia</h1>
+            <nav className="space-x-6">
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? "text-accent font-semibold" : "hover:text-accent"
+                }
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "text-accent font-semibold" : "hover:text-accent"
+                }
+              >
+                About Us
+              </NavLink>
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  isActive ? "text-accent font-semibold" : "hover:text-accent"
+                }
+              >
+                Services
+              </NavLink>
+              <NavLink
+                to="/team"
+                className={({ isActive }) =>
+                  isActive ? "text-accent font-semibold" : "hover:text-accent"
+                }
+              >
+                Our Team
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "text-accent font-semibold" : "hover:text-accent"
+                }
+              >
+                Contact Us
+              </NavLink>
+            </nav>
+          </div>
+        </header>
 
-      {/* Hero */}
-      <section className="bg-gray-100 text-center py-20">
-        <h2 className="text-4xl font-bold mb-4">Engineering Excellence for Zambia’s Future</h2>
-        <p className="text-lg text-gray-600 mb-6">
-          Delivering innovative solutions in civil, structural, and electrical engineering.
-        </p>
-        <a href="#services" className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700">
-          Explore Our Services
-        </a>
-      </section>
+        {/* Main Content */}
+        <main className="grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
 
-      {/* Services */}
-      <section id="services" className="py-16 px-8">
-        <Services />
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="py-16 px-8 bg-gray-50">
-        <Projects />
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-16 px-8">
-        <ContactForm />
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white text-center py-6">
-        <p>&copy; {new Date().getFullYear()} BCHOD Zambia. All rights reserved.</p>
-        <p>Member of the Engineering Institution of Zambia (EIZ)</p>
-      </footer>
-    </div>
+        {/* Footer */}
+        <footer className="bg-secondary text-white text-center py-6 mt-12">
+          <p>&copy; {new Date().getFullYear()} BCHOD Zambia. All rights reserved.</p>
+          <p className="text-accent">Member of the Engineering Institution of Zambia (EIZ)</p>
+        </footer>
+      </div>
+    </Router>
   );
 }
-
-export default App;
