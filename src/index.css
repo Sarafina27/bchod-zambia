@@ -1,6 +1,40 @@
 @import "tailwindcss";
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
 
+body {
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.8;
+}
 
+/* Components + utilities */
+@layer components {
+  .btn-primary {
+    @apply text-white px-6 py-2 rounded-lg font-semibold transition-shadow;
+    background: linear-gradient(90deg, #64276c 0%, #0b6e6c 100%);
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+    color: #111827;
+  }
+  .max-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 
+  /* extra page spacing utilities */
+.section-deep {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn 0.45s ease-in-out; }
+}

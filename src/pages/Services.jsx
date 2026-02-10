@@ -10,4 +10,5 @@ function Services() {
   );
 }
 
+export { Services };
 export default Services;

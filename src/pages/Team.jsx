@@ -22,4 +22,5 @@ function Team() {
   );
 }
 
+export { Team };
 export default Team;
