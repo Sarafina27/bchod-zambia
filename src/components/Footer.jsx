@@ -2,98 +2,68 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
+  const year = new Date().getFullYear();
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="max-container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-2xl font-bold text-accent mb-4">BCHOD Zambia</h3>
-            <p className="text-gray-400 mb-4">
-              Engineering Excellence for Zambia's Future
-            </p>
-            <p className="text-sm text-gray-500">
-              Member of the Engineering Institution of Zambia (EIZ)
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/team" className="text-gray-400 hover:text-white transition-colors">
-                  Our Team
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Services</h4>
-            <ul className="space-y-3">
-              <li className="text-gray-400">Civil Engineering</li>
-              <li className="text-gray-400">Structural Design</li>
-              <li className="text-gray-400">Electrical Systems</li>
-              <li className="text-gray-400">Project Management</li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Contact</h4>
-            <ul className="space-y-3">
-              <li className="text-gray-400">
-                <span className="font-semibold text-white">Location:</span><br />
-                Lusaka, Zambia
-              </li>
-              <li className="text-gray-400">
-                <span className="font-semibold text-white">Email:</span><br />
-                info@bchodzambia.com
-              </li>
-              <li className="text-gray-400">
-                <span className="font-semibold text-white">Phone:</span><br />
-                +260 XXX XXX XXX
-              </li>
-            </ul>
+    <footer className="bg-gray-900 text-gray-300">
+      {/* Tailored Solution CTA */}
+      <div className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="bg-gradient-to-r from-black via-gray-800 to-gray-700 rounded-xl p-8 flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-white">Looking for a tailored solution?</h3>
+              <p className="text-sm text-gray-300 mt-1">Contact our specialists for a free consultation and feasibility review.</p>
+            </div>
+            <a href="/contact" className="inline-block bg-accent text-black font-semibold px-6 py-3 rounded-lg whitespace-nowrap">Get a Consultation</a>
           </div>
         </div>
+      </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              &copy; {currentYear} BCHOD Zambia. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Sitemap
-              </a>
-            </div>
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary" />
+            <h3 className="text-white font-bold">BCHOD Zambia</h3>
+          </div>
+          <p className="text-sm text-gray-400">Engineering excellence for Zambia's future.</p>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold mb-3">Navigation</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/" className="hover:text-white">Home</Link></li>
+            <li><Link to="/about" className="hover:text-white">About</Link></li>
+            <li><Link to="/services" className="hover:text-white">Services</Link></li>
+            <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold mb-3">Services</h4>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li>Civil Engineering</li>
+            <li>Structural Engineering</li>
+            <li>Mechanical Engineering</li>
+            <li>Electrical Engineering</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold mb-3">Contact</h4>
+          <p className="text-sm text-gray-400">Lusaka, Zambia</p>
+          <p className="text-sm text-gray-400">info@bchodzambia.com</p>
+          <p className="text-sm text-gray-400">+260 XXX XXX XXX</p>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>&copy; {year} BCHOD Zambia. All rights reserved.</p>
+          <div className="flex gap-6 mt-3 md:mt-0">
+            <a href="#" className="hover:text-white">Privacy</a>
+            <a href="#" className="hover:text-white">Terms</a>
           </div>
         </div>
       </div>

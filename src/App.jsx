@@ -17,7 +17,7 @@ function App() {
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary to-secondary" />
+              <div className="w-11 h-11 rounded-lg bg-linear-to-br from-primary to-secondary" />
               <h1 className="text-xl font-bold tracking-tight">BCHOD Zambia</h1>
             </div>
 
@@ -29,9 +29,7 @@ function App() {
               <NavLink to="/contact" className={({isActive}) => isActive ? "text-primary font-semibold" : "hover:text-primary"}>Contact</NavLink>
             </nav>
 
-            <div className="hidden md:block">
-              <button className="btn-primary">Get Started</button>
-            </div>
+            
           </div>
         </header>
 

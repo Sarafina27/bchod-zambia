@@ -2,16 +2,16 @@ import React from "react";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
+import { motion } from "framer-motion";
 
-function Home() {
+export default function Home() {
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
       <Hero />
       <Services />
       <Projects />
-    </div>
+    </motion.div>
   );
 }
 
 export { Home };
-export default Home;
